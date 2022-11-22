@@ -293,14 +293,14 @@ const playAgainButton = document.getElementById('playAgainButton');
 
 const dogWinnerSound = new Audio('./Resources/Sound/dogBarkVictory.wav');
 const catWinnerSound = new Audio('./Resources/Sound/catMeowVictory.wav');
+let winnerSVG;
 
-/* The function below is responsible for */
+/* The function below is responsible for showing the endgame message*/
 function endGame(winner, loser) {
     updateInfo();
     endGameMessage.style.display = 'block';
     gameLoser.innerHTML = loser['name'];
     gameWinner.innerHTML = winner['name'];
-    let winnerSVG;
     let winnerSound;
     if (winner['name'] === 'dog') {
         winnerSVG = dogWinner;
@@ -325,6 +325,7 @@ backToMainMenuButton.onclick = function () {
 playAgainButton.onclick = function () {
     reset();
     endGameMessage.style.display = 'none';
+    winnerSVG.style.display = 'none';
 }
 
 // The function below is used by the computer AI to evaluate the quality of the possible moves that can be made.
