@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cats & Dogs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./Resources/Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Resources/Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./Resources/Favicon/favicon-16x16.png">
+</head>
+
+<body class="lightWood">
+  <section id="startScreen">
+    <div id="title1" class="title">
+      <svg class="titleSVG svgAnimation" id="cat-title" viewBox="0 0 300 300" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 300 300">
+        <path
+          d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
+          fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round"
+          stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000"></path>
+        <circle cx="152" cy="168" r="100" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826"
+          stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000">
+        </circle>
+        <path
+          d="M100 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M168 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M120 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M152 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16"
+          fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" class="stroke-000000"></path>
+        <path d="m152 208 20-28-12.1-8h-15.561L132 180z" fill-rule="evenodd" clip-rule="evenodd" fill="none"
+          stroke="#8f4826" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+          class="stroke-000000"></path>
+        <path d="M80 164H32M80 180H32M80 196H32M276 164h-48M276 180h-48M276 196h-48" fill="none" stroke="#8f4826"
+          stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000">
+        </path>
+      </svg>
+      <h1><span class="upLetter">C</span><span class="downLetter">a</span><span class="upLetter">t</span><span
+          class="downLetter">s</span> <span class="upLetter">&</span> <span class="downLetter">D</span><span
+          class="upLetter">o</span><span class="downLetter">g</span><span class="upLetter">s</span></h1>
+      <svg class="titleSVG svgAnimation" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#8F4826"
+          d="M183.378 243.258a17.113 17.113 0 0 0 17.092-17.093v-12.034s-15.65 2.054-33.617 16.181a17.082 17.082 0 0 0 16.525 12.946ZM311.531 226.166a17.06 17.06 0 0 0 33.617 4.146c-17.966-14.127-33.617-16.181-33.617-16.181ZM242.776 128.01a6.4 6.4 0 0 0-6.4 6.4v24.134a61.988 61.988 0 0 1-12.125 36.963 6.399 6.399 0 0 0 1.365 8.947 6.468 6.468 0 0 0 8.947-1.366 74.704 74.704 0 0 0 14.613-44.544V134.41a6.4 6.4 0 0 0-6.4-6.4ZM275.626 158.544V134.41c0-8.24-12.8-8.257-12.8 0v24.134a75.171 75.171 0 0 0 5.79 28.992c2.317 5.532 9.25 23.188 17.77 16.918a6.4 6.4 0 0 0 1.363-8.947 61.984 61.984 0 0 1-12.123-36.963Z"
+          fill="#a0522d" class="fill-000000"></path>
+        <path stroke="#8F4826"
+          d="M440.171 142.507a53.213 53.213 0 0 0-46.21-52.15l-24.557-3.375h-.002a31.163 31.163 0 0 0-30.534 13.777 93.317 93.317 0 0 0-26.708-3.893H199.84a93.32 93.32 0 0 0-26.707 3.894 31.162 31.162 0 0 0-30.535-13.778h-.002l-24.556 3.375a53.21 53.21 0 0 0-46.21 52.15l-.61 38.225a31.074 31.074 0 0 0 21.876 30.597 32.19 32.19 0 0 0 13.249 1.428v122.987a54.883 54.883 0 0 0 24.87 46.035l10.355 6.786a52.703 52.703 0 0 0 19.273 26.545 53.298 53.298 0 0 0 47.581 7.688l47.577-15.24 47.578 15.24a53.295 53.295 0 0 0 47.58-7.688 52.708 52.708 0 0 0 19.271-26.544l10.358-6.787a54.885 54.885 0 0 0 24.869-46.035V212.757a32.184 32.184 0 0 0 13.247-1.428 31.074 31.074 0 0 0 21.876-30.597Zm-343.13 56.647c-6.403-2.075-13.187-7.95-13.025-18.216l.611-38.225a40.483 40.483 0 0 1 35.156-39.675l24.557-3.375h-.002a18.832 18.832 0 0 1 17.992 29.456l-44.058 62.92c-5.888 8.415-14.826 9.193-21.23 7.115Zm152.56 197.015L204.52 410.61a40.395 40.395 0 0 1-52.714-38.469v-18.968a104.365 104.365 0 0 1 76.58-100.455l17.425 22.28a12.86 12.86 0 0 0 3.79 3.203Zm110.595-24.028a40.395 40.395 0 0 1-52.712 38.469L262.4 396.17V278.2a12.86 12.86 0 0 0 3.787-3.202l17.425-22.28a104.366 104.366 0 0 1 76.583 100.455Zm32.661-36.397a42.12 42.12 0 0 1-19.086 35.329l-.775.507v-18.407a117.188 117.188 0 0 0-83.494-112.082 12.897 12.897 0 0 0-12.914-13.322h-41.176a12.895 12.895 0 0 0-12.913 13.323 117.187 117.187 0 0 0-83.493 112.08v18.408l-.774-.507a42.118 42.118 0 0 1-19.087-35.328V208.408a32.14 32.14 0 0 0 9.612-9.026l44.058-62.919a31.18 31.18 0 0 0 5.186-23.81 80.647 80.647 0 0 1 21.839-2.987h112.32a80.66 80.66 0 0 1 21.84 2.987 31.183 31.183 0 0 0 5.187 23.81l44.056 62.918a32.136 32.136 0 0 0 9.614 9.028Zm22.102-136.59c-6.407 2.072-15.343 1.294-21.232-7.116l-44.056-62.919a18.621 18.621 0 0 1-.647-20.612 18.866 18.866 0 0 1 18.636-8.844l24.556 3.375a40.486 40.486 0 0 1 35.158 39.675l.61 38.225c.162 10.266-6.622 16.14-13.025 18.216Z"
+          fill="#a0522d" class="fill-000000"></path>
+        <path
+          d="M194.807 192.282a6.408 6.408 0 0 0-8.598-2.825l-25.202 12.74a39.013 39.013 0 0 0-21.522 34.988v7.953c0 8.24 12.8 8.257 12.8 0v-7.953a26.274 26.274 0 0 1 14.496-23.562l25.203-12.741a6.401 6.401 0 0 0 2.823-8.6ZM350.996 202.198l-25.205-12.741a6.4 6.4 0 1 0-5.775 11.425l25.205 12.74a26.273 26.273 0 0 1 14.494 23.563v7.953c0 8.24 12.8 8.257 12.8 0v-7.953a39.013 39.013 0 0 0-21.519-34.987Z"
+          fill="#a0522d" class="fill-000000"></path>
+      </svg>
+    </div>
+    <div id="subtitle1" class="subtitle">
+      <h2>The abstract Board Game</h2>
+    </div>
+    <h3>Click anywhere to start</h3>
+  </section>
+  <section id="mainMenu">
+    <div id="title2" class="title">
+      <svg class="titleSVG" id="cat-title" viewBox="0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        enable-background="new 0 0 300 300">
+        <path
+          d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
+          fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round"
+          stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000"></path>
+        <circle cx="152" cy="168" r="100" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826"
+          stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000">
+        </circle>
+        <path
+          d="M100 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M168 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M120 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M152 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16"
+          fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" class="stroke-000000"></path>
+        <path d="m152 208 20-28-12.1-8h-15.561L132 180z" fill-rule="evenodd" clip-rule="evenodd" fill="none"
+          stroke="#8f4826" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+          class="stroke-000000"></path>
+        <path d="M80 164H32M80 180H32M80 196H32M276 164h-48M276 180h-48M276 196h-48" fill="none" stroke="#8f4826"
+          stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000">
+        </path>
+      </svg>
+      <h1>Cats &<br>Dogs</h1>
+      <svg class="titleSVG" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#8F4826"
+          d="M183.378 243.258a17.113 17.113 0 0 0 17.092-17.093v-12.034s-15.65 2.054-33.617 16.181a17.082 17.082 0 0 0 16.525 12.946ZM311.531 226.166a17.06 17.06 0 0 0 33.617 4.146c-17.966-14.127-33.617-16.181-33.617-16.181ZM242.776 128.01a6.4 6.4 0 0 0-6.4 6.4v24.134a61.988 61.988 0 0 1-12.125 36.963 6.399 6.399 0 0 0 1.365 8.947 6.468 6.468 0 0 0 8.947-1.366 74.704 74.704 0 0 0 14.613-44.544V134.41a6.4 6.4 0 0 0-6.4-6.4ZM275.626 158.544V134.41c0-8.24-12.8-8.257-12.8 0v24.134a75.171 75.171 0 0 0 5.79 28.992c2.317 5.532 9.25 23.188 17.77 16.918a6.4 6.4 0 0 0 1.363-8.947 61.984 61.984 0 0 1-12.123-36.963Z"
+          fill="#a0522d" class="fill-000000"></path>
+        <path stroke="#8F4826"
+          d="M440.171 142.507a53.213 53.213 0 0 0-46.21-52.15l-24.557-3.375h-.002a31.163 31.163 0 0 0-30.534 13.777 93.317 93.317 0 0 0-26.708-3.893H199.84a93.32 93.32 0 0 0-26.707 3.894 31.162 31.162 0 0 0-30.535-13.778h-.002l-24.556 3.375a53.21 53.21 0 0 0-46.21 52.15l-.61 38.225a31.074 31.074 0 0 0 21.876 30.597 32.19 32.19 0 0 0 13.249 1.428v122.987a54.883 54.883 0 0 0 24.87 46.035l10.355 6.786a52.703 52.703 0 0 0 19.273 26.545 53.298 53.298 0 0 0 47.581 7.688l47.577-15.24 47.578 15.24a53.295 53.295 0 0 0 47.58-7.688 52.708 52.708 0 0 0 19.271-26.544l10.358-6.787a54.885 54.885 0 0 0 24.869-46.035V212.757a32.184 32.184 0 0 0 13.247-1.428 31.074 31.074 0 0 0 21.876-30.597Zm-343.13 56.647c-6.403-2.075-13.187-7.95-13.025-18.216l.611-38.225a40.483 40.483 0 0 1 35.156-39.675l24.557-3.375h-.002a18.832 18.832 0 0 1 17.992 29.456l-44.058 62.92c-5.888 8.415-14.826 9.193-21.23 7.115Zm152.56 197.015L204.52 410.61a40.395 40.395 0 0 1-52.714-38.469v-18.968a104.365 104.365 0 0 1 76.58-100.455l17.425 22.28a12.86 12.86 0 0 0 3.79 3.203Zm110.595-24.028a40.395 40.395 0 0 1-52.712 38.469L262.4 396.17V278.2a12.86 12.86 0 0 0 3.787-3.202l17.425-22.28a104.366 104.366 0 0 1 76.583 100.455Zm32.661-36.397a42.12 42.12 0 0 1-19.086 35.329l-.775.507v-18.407a117.188 117.188 0 0 0-83.494-112.082 12.897 12.897 0 0 0-12.914-13.322h-41.176a12.895 12.895 0 0 0-12.913 13.323 117.187 117.187 0 0 0-83.493 112.08v18.408l-.774-.507a42.118 42.118 0 0 1-19.087-35.328V208.408a32.14 32.14 0 0 0 9.612-9.026l44.058-62.919a31.18 31.18 0 0 0 5.186-23.81 80.647 80.647 0 0 1 21.839-2.987h112.32a80.66 80.66 0 0 1 21.84 2.987 31.183 31.183 0 0 0 5.187 23.81l44.056 62.918a32.136 32.136 0 0 0 9.614 9.028Zm22.102-136.59c-6.407 2.072-15.343 1.294-21.232-7.116l-44.056-62.919a18.621 18.621 0 0 1-.647-20.612 18.866 18.866 0 0 1 18.636-8.844l24.556 3.375a40.486 40.486 0 0 1 35.158 39.675l.61 38.225c.162 10.266-6.622 16.14-13.025 18.216Z"
+          fill="#a0522d" class="fill-000000"></path>
+        <path
+          d="M194.807 192.282a6.408 6.408 0 0 0-8.598-2.825l-25.202 12.74a39.013 39.013 0 0 0-21.522 34.988v7.953c0 8.24 12.8 8.257 12.8 0v-7.953a26.274 26.274 0 0 1 14.496-23.562l25.203-12.741a6.401 6.401 0 0 0 2.823-8.6ZM350.996 202.198l-25.205-12.741a6.4 6.4 0 1 0-5.775 11.425l25.205 12.74a26.273 26.273 0 0 1 14.494 23.563v7.953c0 8.24 12.8 8.257 12.8 0v-7.953a39.013 39.013 0 0 0-21.519-34.987Z"
+          fill="#a0522d" class="fill-000000"></path>
+      </svg>
+    </div>
+    <div id="subtitle2" class="subtitle">
+      <h2>The abstract Board Game</h2>
+    </div>
+
+    <div id="buttonsContainer">
+      <button id="startNewGame">New Game</button>
+      <button id="gameRulesButton">Game rules</button>
+      <button>Credits</button>
+    </div>
+
+    <div class="font2">Music by <a href="https://ahjaystelino.com/">Ahjay Stelino</a>
+      from <a href="https://mixkit.co/">mixkit</a>
+    </div>
+  </section>
+
+  <section id="gameRules" class="middleScreen">
+    <div class="gameInfo rules centered wood messages">
+      <h3>Rules</h3>
+      <p>To play, players alternately place their pieces on the empty board. The player who has the cat pieces starts
+        and places his piece on one of the four squares in the center of the board. The player who has the dog pieces
+        cannot place his 1st piece on one of these squares in the center of the board.</p>
+      <p>It is necessary to take into account that, when placing their pieces on the board, players cannot place a dog
+        piece next to a cat piece and vice versa, neither vertically nor horizontally.</p>
+      <p>The winner is the player who is able to make the last move.</p>
+      <button id="backButton">Back</button>
+    </div>
+  </section>
+
+  <section id="newGame" class="middleScreen">
+    <div class="newGame centered wood messages">
+      <h3>New Game</h3>
+      <h4>Game options</h2>
+        <table>
+          <tr>
+            <th id="gameMode" colspan="4">Game mode</th>
+          </tr>
+          <tr>
+            <td colspan="2"><button id="singlePlayerButton" class="newGameButton big ">Single player (Vs AI)</button>
+            </td>
+            <td colspan="2"><button id="multiPlayerButton" class="newGameButton big chosenOption">Multiplayer (hot
+                seat)</button>
+            </td>
+          </tr>
+        </table>
+        <table id="aiDiff">
+          <tr>
+            <th id="difficulty" colspan="4">AI Difficulty</th>
+          </tr>
+          <tr>
+            <td><button id="easy" class="newGameButton small">Easy</button></td>
+            <td><button id="normal" class="newGameButton small">Normal</button></td>
+            <td><button id="hard" class="newGameButton small">Hard</button></td>
+            <td><button id="veryHard" class="newGameButton small">Very hard</button></td>
+          </tr>
+        </table>
+        <button id="startButton">Start</button>
+    </div>
+  </section>
+
+  <section id="boardContainer">
+    <div id="boardTitle" class="statsTitle">
+      <svg class="boardtitleSVG" id="cat-title" viewBox="0 0 300 300" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 300 300">
+        <path
+          d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
+          fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round"
+          stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000"></path>
+        <circle cx="152" cy="168" r="100" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826"
+          stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000">
+        </circle>
+        <path
+          d="M100 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M168 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M120 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M152 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16"
+          fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"
+          stroke-miterlimit="10" class="stroke-000000"></path>
+        <path d="m152 208 20-28-12.1-8h-15.561L132 180z" fill-rule="evenodd" clip-rule="evenodd" fill="none"
+          stroke="#8f4826" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+          class="stroke-000000"></path>
+        <path d="M80 164H32M80 180H32M80 196H32M276 164h-48M276 180h-48M276 196h-48" fill="none" stroke="#8f4826"
+          stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000">
+        </path>
+      </svg>
+      <h1>Cats <br> & <br> Dogs</h1>
+      <svg class="boardtitleSVG" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <path stroke="#8F4826"
+          d="M183.378 243.258a17.113 17.113 0 0 0 17.092-17.093v-12.034s-15.65 2.054-33.617 16.181a17.082 17.082 0 0 0 16.525 12.946ZM311.531 226.166a17.06 17.06 0 0 0 33.617 4.146c-17.966-14.127-33.617-16.181-33.617-16.181ZM242.776 128.01a6.4 6.4 0 0 0-6.4 6.4v24.134a61.988 61.988 0 0 1-12.125 36.963 6.399 6.399 0 0 0 1.365 8.947 6.468 6.468 0 0 0 8.947-1.366 74.704 74.704 0 0 0 14.613-44.544V134.41a6.4 6.4 0 0 0-6.4-6.4ZM275.626 158.544V134.41c0-8.24-12.8-8.257-12.8 0v24.134a75.171 75.171 0 0 0 5.79 28.992c2.317 5.532 9.25 23.188 17.77 16.918a6.4 6.4 0 0 0 1.363-8.947 61.984 61.984 0 0 1-12.123-36.963Z"
+          fill="#a0522d" class="fill-000000"></path>
+        <path stroke="#8F4826"
+          d="M440.171 142.507a53.213 53.213 0 0 0-46.21-52.15l-24.557-3.375h-.002a31.163 31.163 0 0 0-30.534 13.777 93.317 93.317 0 0 0-26.708-3.893H199.84a93.32 93.32 0 0 0-26.707 3.894 31.162 31.162 0 0 0-30.535-13.778h-.002l-24.556 3.375a53.21 53.21 0 0 0-46.21 52.15l-.61 38.225a31.074 31.074 0 0 0 21.876 30.597 32.19 32.19 0 0 0 13.249 1.428v122.987a54.883 54.883 0 0 0 24.87 46.035l10.355 6.786a52.703 52.703 0 0 0 19.273 26.545 53.298 53.298 0 0 0 47.581 7.688l47.577-15.24 47.578 15.24a53.295 53.295 0 0 0 47.58-7.688 52.708 52.708 0 0 0 19.271-26.544l10.358-6.787a54.885 54.885 0 0 0 24.869-46.035V212.757a32.184 32.184 0 0 0 13.247-1.428 31.074 31.074 0 0 0 21.876-30.597Zm-343.13 56.647c-6.403-2.075-13.187-7.95-13.025-18.216l.611-38.225a40.483 40.483 0 0 1 35.156-39.675l24.557-3.375h-.002a18.832 18.832 0 0 1 17.992 29.456l-44.058 62.92c-5.888 8.415-14.826 9.193-21.23 7.115Zm152.56 197.015L204.52 410.61a40.395 40.395 0 0 1-52.714-38.469v-18.968a104.365 104.365 0 0 1 76.58-100.455l17.425 22.28a12.86 12.86 0 0 0 3.79 3.203Zm110.595-24.028a40.395 40.395 0 0 1-52.712 38.469L262.4 396.17V278.2a12.86 12.86 0 0 0 3.787-3.202l17.425-22.28a104.366 104.366 0 0 1 76.583 100.455Zm32.661-36.397a42.12 42.12 0 0 1-19.086 35.329l-.775.507v-18.407a117.188 117.188 0 0 0-83.494-112.082 12.897 12.897 0 0 0-12.914-13.322h-41.176a12.895 12.895 0 0 0-12.913 13.323 117.187 117.187 0 0 0-83.493 112.08v18.408l-.774-.507a42.118 42.118 0 0 1-19.087-35.328V208.408a32.14 32.14 0 0 0 9.612-9.026l44.058-62.919a31.18 31.18 0 0 0 5.186-23.81 80.647 80.647 0 0 1 21.839-2.987h112.32a80.66 80.66 0 0 1 21.84 2.987 31.183 31.183 0 0 0 5.187 23.81l44.056 62.918a32.136 32.136 0 0 0 9.614 9.028Zm22.102-136.59c-6.407 2.072-15.343 1.294-21.232-7.116l-44.056-62.919a18.621 18.621 0 0 1-.647-20.612 18.866 18.866 0 0 1 18.636-8.844l24.556 3.375a40.486 40.486 0 0 1 35.158 39.675l.61 38.225c.162 10.266-6.622 16.14-13.025 18.216Z"
+          fill="#a0522d" class="fill-000000"></path>
+        <path
+          d="M194.807 192.282a6.408 6.408 0 0 0-8.598-2.825l-25.202 12.74a39.013 39.013 0 0 0-21.522 34.988v7.953c0 8.24 12.8 8.257 12.8 0v-7.953a26.274 26.274 0 0 1 14.496-23.562l25.203-12.741a6.401 6.401 0 0 0 2.823-8.6ZM350.996 202.198l-25.205-12.741a6.4 6.4 0 1 0-5.775 11.425l25.205 12.74a26.273 26.273 0 0 1 14.494 23.563v7.953c0 8.24 12.8 8.257 12.8 0v-7.953a39.013 39.013 0 0 0-21.519-34.987Z"
+          fill="#a0522d" class="fill-000000"></path>
+      </svg>
+    </div>
+    <div id="board" class="wood">
+      <div class="row A">
+        <div class="square" id="A11">11</div>
+        <div class="square" id="A12">12</div>
+        <div class="square" id="A13">13</div>
+        <div class="square" id="A14">14</div>
+        <div class="square" id="A15">15</div>
+        <div class="square" id="A16">16</div>
+        <div class="square" id="A17">17</div>
+        <div class="square" id="A18">18</div>
+      </div>
+      <div class="row B">
+        <div class="square" id="B21">21</div>
+        <div class="square" id="B22">22</div>
+        <div class="square" id="B23">23</div>
+        <div class="square" id="B24">24</div>
+        <div class="square" id="B25">25</div>
+        <div class="square" id="B26">26</div>
+        <div class="square" id="B27">27</div>
+        <div class="square" id="B28">28</div>
+      </div>
+      <div class="row C">
+        <div class="square" id="C31">31</div>
+        <div class="square" id="C32">32</div>
+        <div class="square" id="C33">33</div>
+        <div class="square" id="C34">34</div>
+        <div class="square" id="C35">35</div>
+        <div class="square" id="C36">36</div>
+        <div class="square" id="C37">37</div>
+        <div class="square" id="C38">38</div>
+      </div>
+      <div class="row D">
+        <div class="square" id="D41">41</div>
+        <div class="square" id="D42">42</div>
+        <div class="square" id="D43">43</div>
+        <div class="square center" id="D44">44</div>
+        <div class="square center" id="D45">45</div>
+        <div class="square" id="D46">46</div>
+        <div class="square" id="D47">47</div>
+        <div class="square" id="D48">48</div>
+      </div>
+      <div class="row E">
+        <div class="square" id="E51">51</div>
+        <div class="square" id="E52">52</div>
+        <div class="square" id="E53">53</div>
+        <div class="square center" id="E54">54</div>
+        <div class="square center" id="E55">55</div>
+        <div class="square" id="E56">56</div>
+        <div class="square" id="E57">57</div>
+        <div class="square" id="E58">58</div>
+      </div>
+      <div class="row F">
+        <div class="square" id="F61">61</div>
+        <div class="square" id="F62">62</div>
+        <div class="square" id="F63">63</div>
+        <div class="square" id="F64">64</div>
+        <div class="square" id="F65">65</div>
+        <div class="square" id="F66">66</div>
+        <div class="square" id="F67">67</div>
+        <div class="square" id="F68">68</div>
+      </div>
+      <div class="row G">
+        <div class="square" id="G71">71</div>
+        <div class="square" id="G72">72</div>
+        <div class="square" id="G73">73</div>
+        <div class="square" id="G74">74</div>
+        <div class="square" id="G75">75</div>
+        <div class="square" id="G76">76</div>
+        <div class="square" id="G77">77</div>
+        <div class="square" id="G78">78</div>
+      </div>
+      <div class="row H">
+        <div class="square" id="H81">81</div>
+        <div class="square" id="H82">82</div>
+        <div class="square" id="H83">83</div>
+        <div class="square" id="H84">84</div>
+        <div class="square" id="H85">85</div>
+        <div class="square" id="H86">86</div>
+        <div class="square" id="H87">87</div>
+        <div class="square" id="H88">88</div>
+      </div>
+    </div>
+    <div class="wood">
+
+    </div>
+    <div class="gameInfo statsTitle wood">
+      <p>CURRENT MOVE: <span id="currentMove"></span></p>
+      <hr>
+      <p>CURRENT PLAYER: <span id="currentPlayer"></span></p>
+      <hr>
+      <p>CAT'S AVAILABLE SQUARES:<span id="catAvailableMoves"></span></p>
+      <hr>
+      <p>DOG'S AVAILABLE SQUARES:<span id="dogAvailableMoves"></span></p>
+    </div>
+    <div id="errorMessage" class="messageContainer lightWood message">
+      <h1>Invalid move</h1>
+      <p id="error"></p>
+      <button id="okButton">OK</button>
+    </div>
+
+
+
+
+    <div id="endGameMessage" class="messageContainer lightWood message">
+      <h1>The game is over</h1>
+      <p>The <span id="gameLoser"></span> has no more moves available.</p>
+      <div id="winnerContainer">
+        <svg class="svgEndGame" viewBox="0 0 52 52" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          enable-background="new 0 0 52 52">
+          <path
+            d="M25.031 9.285c.735 1.795 1.143 3.61 1.669 5.462.176.62.187 1.325.786 1.71.39.252.789.232 1.218.238 1.808.026 3.788-.775 5.663-.816l-1.125-1.125c-.127 1.082-3.799 2.76-4.326 4.39-.625 1.936 1.737 3.677 1.63 5.68l.827-1.085c-1.38.251-3.363-2.05-3.975-2.93-.446-.641-1.173-.704-1.767-.227-1.777 1.425-3.001 2.986-5.35 3.567l1.424 1.085c.05-2.686.992-4.043 2.77-5.77.603-.584.32-1.67-.496-1.88-2.598-.668-4.148-1.81-5.938-3.706l-.795 1.92c2.046-.147 5.562.652 7.348-.563 1.677-1.14 1.801-4.128 2.217-5.86.338-1.408-1.831-2.009-2.17-.599-.4 1.67-.371 3.922-2.267 4.666-1.205.474-3.775.009-5.128.106-.966.07-1.492 1.182-.796 1.92.961 1.02 1.915 2.346 3.083 3.14 1.243.846 2.422.78 3.848 1.146l-.496-1.88c-2.375 2.305-3.367 3.996-3.43 7.36-.014.748.729 1.257 1.424 1.085 2.826-.7 4.167-2.4 6.343-4.146l-1.767-.228c1.388 1.995 3.848 4.45 6.516 3.963.5-.09.801-.62.826-1.084.05-.952-.333-1.924-.663-2.8-.647-1.72-.67-1.975.366-3.44.966-1.366 2.783-2.055 2.992-3.83.07-.596-.572-1.137-1.125-1.125-.857.019-1.697.05-2.548.156-.582.071-2.796.795-3.309.665l.475.324a24.581 24.581 0 0 0-.525-2.489c-.327-1.234-.776-2.418-1.26-3.598-.54-1.322-2.718-.744-2.169.598z"
+            fill="#8f4826" class="fill-231f20"></path>
+          <path
+            d="M11.85 3.02c9.594-.08 19.188-.158 28.781-.236l-1.125-1.125L39 20.533c-.102 3.822.03 7.226-2.89 10.117-2.3 2.276-6.418 4.21-9.538 4.354-17.14.793-13.537-21.6-13.59-32.709-.006-1.447-2.256-1.45-2.25 0l.075 15.6c.016 3.507-.304 7.13 1.22 10.392 2.801 5.991 8.072 9.084 14.545 8.967 4.93-.09 12.252-3.71 14.168-8.652 1.22-3.147.498-7.59.586-10.9l.43-16.043c.017-.604-.528-1.13-1.125-1.125l-28.78.235c-1.448.012-1.451 2.262 0 2.25z"
+            fill="#8f4826" class="fill-231f20"></path>
+          <path
+            d="m40.767 7.755 7.84-.004-1.085-.826c1.474 5.03-1.82 15.596-7.085 17.6-1.34.511-.758 2.687.599 2.17 3.336-1.27 5.175-3.923 6.523-7.144 1.59-3.801 3.34-9.107 2.133-13.224a1.15 1.15 0 0 0-1.085-.826l-7.84.004c-1.448 0-1.45 2.25 0 2.25zM11.517 6.163l-5.724.018c-.702.002-2.199-.291-2.882.245-1.633 1.282-.816 5.576-.681 7.281.403 5.084 4.077 10.337 8.893 12.336 1.336.554 1.919-1.622.598-2.17-1.809-.75-3.047-2.425-4.31-3.836-1.928-2.154-2.782-4.052-2.98-6.963-.093-1.392-.579-3.755.726-4.641.981-.666 5.065-.016 6.36-.02 1.448-.004 1.45-2.254 0-2.25zM18.1 46.65l9.546.078c1.488.013 4.14-.347 5.582.068l3.07 2.117a997.856 997.856 0 0 1-16.71.101l-1.856-.005c-2.903.394-2.619-.398.852-2.376 1.442.128 1.433-2.122 0-2.25-3.008-.268-6.56 2.878-5.65 6.027a1.15 1.15 0 0 0 1.085.826c4.641.033 9.283.04 13.925.013 3.393-.021 7.765.669 11.02-.307.359-.108.707-.403.786-.786.475-2.322-.602-4.195-2.767-5.02-2.285-.872-5.05-.617-7.428-.642-3.818-.04-7.636-.063-11.455-.095-1.448-.012-1.45 2.238 0 2.25z"
+            fill="#8f4826" class="fill-231f20"></path>
+          <path
+            d="M22.405 36.212c.04 2.835.111 5.668.215 8.501.054 1.444 2.304 1.45 2.25 0a368.468 368.468 0 0 1-.215-8.501c-.02-1.447-2.27-1.45-2.25 0zM27.637 36.546l.12 8c.022 1.447 2.272 1.451 2.25 0l-.12-8c-.021-1.447-2.271-1.451-2.25 0z"
+            fill="#8f4826" class="fill-231f20"></path>
+        </svg>
+        <p>The winner is the <span id="gameWinner"></span></p>
+        <svg class="svgEndGame" viewBox="0 0 52 52" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+          enable-background="new 0 0 52 52">
+          <path
+            d="M25.031 9.285c.735 1.795 1.143 3.61 1.669 5.462.176.62.187 1.325.786 1.71.39.252.789.232 1.218.238 1.808.026 3.788-.775 5.663-.816l-1.125-1.125c-.127 1.082-3.799 2.76-4.326 4.39-.625 1.936 1.737 3.677 1.63 5.68l.827-1.085c-1.38.251-3.363-2.05-3.975-2.93-.446-.641-1.173-.704-1.767-.227-1.777 1.425-3.001 2.986-5.35 3.567l1.424 1.085c.05-2.686.992-4.043 2.77-5.77.603-.584.32-1.67-.496-1.88-2.598-.668-4.148-1.81-5.938-3.706l-.795 1.92c2.046-.147 5.562.652 7.348-.563 1.677-1.14 1.801-4.128 2.217-5.86.338-1.408-1.831-2.009-2.17-.599-.4 1.67-.371 3.922-2.267 4.666-1.205.474-3.775.009-5.128.106-.966.07-1.492 1.182-.796 1.92.961 1.02 1.915 2.346 3.083 3.14 1.243.846 2.422.78 3.848 1.146l-.496-1.88c-2.375 2.305-3.367 3.996-3.43 7.36-.014.748.729 1.257 1.424 1.085 2.826-.7 4.167-2.4 6.343-4.146l-1.767-.228c1.388 1.995 3.848 4.45 6.516 3.963.5-.09.801-.62.826-1.084.05-.952-.333-1.924-.663-2.8-.647-1.72-.67-1.975.366-3.44.966-1.366 2.783-2.055 2.992-3.83.07-.596-.572-1.137-1.125-1.125-.857.019-1.697.05-2.548.156-.582.071-2.796.795-3.309.665l.475.324a24.581 24.581 0 0 0-.525-2.489c-.327-1.234-.776-2.418-1.26-3.598-.54-1.322-2.718-.744-2.169.598z"
+            fill="#8f4826" class="fill-231f20"></path>
+          <path
+            d="M11.85 3.02c9.594-.08 19.188-.158 28.781-.236l-1.125-1.125L39 20.533c-.102 3.822.03 7.226-2.89 10.117-2.3 2.276-6.418 4.21-9.538 4.354-17.14.793-13.537-21.6-13.59-32.709-.006-1.447-2.256-1.45-2.25 0l.075 15.6c.016 3.507-.304 7.13 1.22 10.392 2.801 5.991 8.072 9.084 14.545 8.967 4.93-.09 12.252-3.71 14.168-8.652 1.22-3.147.498-7.59.586-10.9l.43-16.043c.017-.604-.528-1.13-1.125-1.125l-28.78.235c-1.448.012-1.451 2.262 0 2.25z"
+            fill="#8f4826" class="fill-231f20"></path>
+          <path
+            d="m40.767 7.755 7.84-.004-1.085-.826c1.474 5.03-1.82 15.596-7.085 17.6-1.34.511-.758 2.687.599 2.17 3.336-1.27 5.175-3.923 6.523-7.144 1.59-3.801 3.34-9.107 2.133-13.224a1.15 1.15 0 0 0-1.085-.826l-7.84.004c-1.448 0-1.45 2.25 0 2.25zM11.517 6.163l-5.724.018c-.702.002-2.199-.291-2.882.245-1.633 1.282-.816 5.576-.681 7.281.403 5.084 4.077 10.337 8.893 12.336 1.336.554 1.919-1.622.598-2.17-1.809-.75-3.047-2.425-4.31-3.836-1.928-2.154-2.782-4.052-2.98-6.963-.093-1.392-.579-3.755.726-4.641.981-.666 5.065-.016 6.36-.02 1.448-.004 1.45-2.254 0-2.25zM18.1 46.65l9.546.078c1.488.013 4.14-.347 5.582.068l3.07 2.117a997.856 997.856 0 0 1-16.71.101l-1.856-.005c-2.903.394-2.619-.398.852-2.376 1.442.128 1.433-2.122 0-2.25-3.008-.268-6.56 2.878-5.65 6.027a1.15 1.15 0 0 0 1.085.826c4.641.033 9.283.04 13.925.013 3.393-.021 7.765.669 11.02-.307.359-.108.707-.403.786-.786.475-2.322-.602-4.195-2.767-5.02-2.285-.872-5.05-.617-7.428-.642-3.818-.04-7.636-.063-11.455-.095-1.448-.012-1.45 2.238 0 2.25z"
+            fill="#8f4826" class="fill-231f20"></path>
+          <path
+            d="M22.405 36.212c.04 2.835.111 5.668.215 8.501.054 1.444 2.304 1.45 2.25 0a368.468 368.468 0 0 1-.215-8.501c-.02-1.447-2.27-1.45-2.25 0zM27.637 36.546l.12 8c.022 1.447 2.272 1.451 2.25 0l-.12-8c-.021-1.447-2.271-1.451-2.25 0z"
+            fill="#8f4826" class="fill-231f20"></path>
+        </svg>
+      </div>
+      <div class="buttonContainer">
+        <button id="backToMainMenuButton">Back to main menu</button>
+        <svg class="svgWinner" id="dogWinner" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m407.305 102.279-47.048-24.833a25.022 25.022 0 0 0-27.647 2.603 25.655 25.655 0 0 0-5.78 6.56 70.984 70.984 0 0 0-29.445-6.427h-82.77a71 71 0 0 0-29.445 6.427 25.657 25.657 0 0 0-5.78-6.56 25.027 25.027 0 0 0-27.646-2.603l-47.048 24.833a48.776 48.776 0 0 0-23.455 59.403l24.817 71.723a25.423 25.423 0 0 0 37.608 13.118v123.393c0 37.136 42.428 56.82 73.18 63.5a187.548 187.548 0 0 0 70.01 1.584c19.741-3.273 39.627-9.855 55.937-21.724 14.033-10.213 25.542-25.33 25.542-43.36V246.524a25.423 25.423 0 0 0 37.607-13.119l24.816-71.723a48.773 48.773 0 0 0-23.453-59.403Zm-276.84 135.383a12.246 12.246 0 0 1-12.31-8.441l-24.817-71.724a36.046 36.046 0 0 1 17.333-43.9l47.048-24.832a12.46 12.46 0 0 1 13.69 1.289 12.242 12.242 0 0 1 4.296 13.062l-33.561 125.249a12.212 12.212 0 0 1-11.678 9.297ZM256 424.683c-53.953 0-99.534-25.08-99.534-54.767V224.365l31.601-117.936a25.88 25.88 0 0 0 .88-7.479 58.165 58.165 0 0 1 25.667-5.968h82.77a58.173 58.173 0 0 1 25.67 5.968 25.888 25.888 0 0 0 .878 7.479l31.603 117.941v145.546c0 29.688-45.582 54.767-99.535 54.767Zm162.66-267.185-24.815 71.721a12.554 12.554 0 0 1-23.99-.854l-33.56-125.249a12.242 12.242 0 0 1 4.297-13.062 12.462 12.462 0 0 1 13.69-1.29l47.048 24.834a36.043 36.043 0 0 1 17.331 43.9Z"
+            fill="#8f4826" class="fill-000000"></path>
+          <path
+            d="M306.757 245.705c-7.2 0-5.815 7.73-7.37 12.393a18.977 18.977 0 0 1-36.551-1.98 11.063 11.063 0 0 0 1.827-1.836l14.493-18.53a11 11 0 0 0-8.665-17.775h-28.983a10.998 10.998 0 0 0-8.664 17.775l14.492 18.53a11.07 11.07 0 0 0 1.828 1.836c-3.638 16.825-26.955 20.14-35.202 5.073a18.956 18.956 0 0 1-1.907-5.161c-.418-1.969-.12-4.123-.778-6.02a6.46 6.46 0 0 0-9.265-3.43c-6.775 3.964-1.791 16.478 1.154 21.516a32.08 32.08 0 0 0 21.055 15.142v33.365a31.779 31.779 0 0 0 63.557 0v-33.365a32.072 32.072 0 0 0 21.055-15.142c3.04-5.201 9.063-22.39-2.077-22.39ZM256 335.58a19 19 0 0 1-18.98-18.978v-33.365A31.804 31.804 0 0 0 256 271.151a31.802 31.802 0 0 0 18.978 12.086v33.365A19 19 0 0 1 256 335.58ZM219.875 182.58v-10.139a14.4 14.4 0 1 0-28.8 0v10.139a14.4 14.4 0 0 0 28.8 0ZM306.525 158.041a14.417 14.417 0 0 0-14.4 14.4v10.139a14.4 14.4 0 1 0 28.8 0v-10.139a14.417 14.417 0 0 0-14.4-14.4Z"
+            fill="#8f4826" class="fill-000000"></path>
+        </svg>
+        <svg class="svgWinner" id="catWinner" viewBox="0 0 300 300" xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 300 300">
+          <path
+            d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
+            fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826" stroke-width="8" stroke-linecap="round"
+            stroke-linejoin="round" stroke-miterlimit="10" class="stroke-000000"></path>
+          <circle cx="152" cy="168" r="100" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826"
+            stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+            class="stroke-000000"></circle>
+          <path
+            d="M100 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M168 144c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M120 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16M152 204c0 8.837 7.163 16 16 16 8.836 0 16-7.163 16-16"
+            fill="none" stroke="#8f4826" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+            stroke-miterlimit="10" class="stroke-000000"></path>
+          <path d="m152 208 20-28-12.1-8h-15.561L132 180z" fill-rule="evenodd" clip-rule="evenodd" fill="none"
+            stroke="#8f4826" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+            class="stroke-000000"></path>
+          <path d="M80 164H32M80 180H32M80 196H32M276 164h-48M276 180h-48M276 196h-48" fill="none" stroke="#8f4826"
+            stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+            class="stroke-000000"></path>
+        </svg>
+        <button id="playAgainButton">Play again</button>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="./script.js" async></script>
+
+</html>
