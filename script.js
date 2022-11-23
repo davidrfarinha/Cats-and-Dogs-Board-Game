@@ -11,7 +11,7 @@ const dogInitialMoves = [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26,
 let cat = {
     name: 'cat',
     color: '#dcb893',
-    moves: catInitialMoves,
+    moves: catInitialMoves
 }
 
 let dog = {
@@ -586,7 +586,7 @@ function revert(event) {
 }
 
 // This forEach loop creates a onmouse down event listener that runs the function makeMove in every square of the board;
-squares.forEach(item => item.onmousedown = makeMove);
+squares.forEach(item => item.onclick = makeMove);
 squares.forEach(item => item.onmouseover = checkIfAvailable);
 squares.forEach(item => item.onmouseout = revert);
 
