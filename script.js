@@ -26,11 +26,9 @@ let squares = []; // This array will be populated with the object location of al
 allIds.forEach(item => squares.push(document.getElementById(item)));
 
 let moveNumber = 0; // This is the move counter. For every turn, it will increase 1
-
 let currentPlayer = cat; // This variable tracks the current player
 let otherPlayer = dog; // This variable tracks the player who is waiting for his turn
 
-let movesMade = [];
 
 
 
@@ -85,7 +83,7 @@ function makeMove(event) {
 
         // This if statement checks if the other player still has moves left. If not, it will run an alert informing the winner of the game and reset the whole board with the help of reset function;
         if (currentPlayer['moves'].length === 0) {
-            endGame(otherPlayer, currentPlayer);
+            return endGame(otherPlayer, currentPlayer);
         }
 
         // This if statement checks if the game is multiplayer and if yes, it runs the function computerAI with the apropriate parameter for the difficulty level;
@@ -152,8 +150,6 @@ function addPiece(playerColor, playerName, square) {
 
 // This function updates both players arrays of valid moves;
 function updateValidMoves(move, player1, player2) {
-    movesMade.push(move);
-    //console.log(`List of moves already made: ${movesMade}`)
     const squareToRemove2 = move - 10;
     const squareToRemove3 = move - 1;
     const squareToRemove4 = move + 1;
@@ -170,6 +166,9 @@ function updateValidMoves(move, player1, player2) {
 
 /* ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- 
 */
+
+
+/*
 // This function is the current working function of computer AI.
 function computerAI(difficulty) {
     let move;
@@ -234,6 +233,13 @@ function computerAI(difficulty) {
         let moves1 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-1));
         let moves0 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (0));
 
+        console.log(moves5);
+        console.log(moves4);
+        console.log(moves3);
+        console.log(moves2);
+        console.log(moves1);
+        console.log(moves0);
+
         switch (true) {
             case moves5.length > 0:
                 randomNumber = Math.floor(Math.random() * moves5.length);
@@ -281,6 +287,167 @@ function computerAI(difficulty) {
         updateInfo();
     }
 }
+*/
+
+
+/* ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- 
+*/
+
+
+// ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+// This function is the current working function of computer AI.
+function computerAI(difficulty) {
+    let move;
+
+    let possibleMoves = []; // This array will be populated by the factory function below with objects that represent every possible move to computer player;
+    dog['moves'].forEach(item => {
+        possibleMoves.push(checkAfterValidMoves(item, cat))
+    });
+    let moves5 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-5));
+    let moves4 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-4));
+    let moves3 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-3));
+    let moves2 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-2));
+    let moves1 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-1));
+    let moves0 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (0));
+    //console.log(moves5);
+    //console.log(moves4);
+    //console.log(moves3);
+    //console.log(moves2);
+    //console.log(moves1);
+    //console.log(moves0);
+
+    let bestMoves = [];
+    let intermediateMoves = [];
+    let worstMoves = [];
+
+    switch (true) {
+        case moves5.length > 0:
+            //console.log('moves5.length > 0');
+            bestMoves = moves5;
+            intermediateMoves = moves4;
+            worstMoves = moves3.concat(moves2, moves1, moves0);
+            break;
+        case moves4.length > 0:
+            //console.log('moves4.length > 0');
+            bestMoves = moves4;
+            intermediateMoves = moves3;
+            worstMoves = moves2.concat(moves1, moves0);
+            break;
+        case moves3.length > 0:
+            //console.log('moves3.length > 0');
+            bestMoves = moves3;
+            intermediateMoves = moves2;
+            worstMoves = moves1.concat(moves0);
+            break;
+        case moves2.length > 0:
+            //console.log('moves2.length > 0');
+            bestMoves = moves2;
+            intermediateMoves = moves1;
+            worstMoves = moves0;
+            break;
+        case moves1.length > 0:
+            //console.log('moves1.length > 0');
+            bestMoves = moves1;
+            intermediateMoves = moves0;
+            worstMoves = moves0;
+            break;
+        default:
+            //console.log('moves0.length > 0');
+            bestMoves = moves0;
+            intermediateMoves = moves0;
+            worstMoves = moves0;
+    }
+
+    let weightedChoice = getWeightedRandom(difficulty);
+    console.log('Weighted Choice is: ' + weightedChoice)
+    let weightedChoiceArray = [];
+    switch (weightedChoice) {
+        case 'bestMoves':
+            weightedChoiceArray = bestMoves;
+            break;
+        case 'intermediateMoves':
+            if (intermediateMoves.length > 0) {
+                weightedChoiceArray = intermediateMoves;
+            } else if (bestMoves.length > 0) {
+                weightedChoiceArray = bestMoves;
+            } else {
+                weightedChoiceArray = worstMoves;
+            }
+            break;
+        case 'worstMoves':
+            if (worstMoves.length > 0) {
+                weightedChoiceArray = worstMoves;
+            } else if (intermediateMoves.length > 0) {
+                weightedChoiceArray = intermediateMoves;
+            } else {
+                weightedChoiceArray = bestMoves;
+            }
+            break;
+    }
+
+    let randomNumber;
+    let objectMove;
+    randomNumber = Math.floor(Math.random() * weightedChoiceArray.length);
+    objectMove = weightedChoiceArray[randomNumber];
+    move = (objectMove['moveMade']);
+
+    console.log("Computer move: square " + move);
+    // The piece of code below transfers the value given to move to the correct square div on the board;
+    let chosenSquare;
+    for (const square of squares) {
+        if (Number(square['id'].substring(1, 3)) === move) {
+            chosenSquare = square; // VERY IMPORTANT PIECE OF CODE
+        }
+    }
+    addPiece(dog['color'], dog['name'], chosenSquare);
+    updateValidMoves(move, dog, cat);
+
+
+    if (cat['moves'].length === 0) {
+        endGame(dog, cat);
+    } else {
+        currentPlayer = cat;
+        moveNumber++;
+        updateInfo();
+    }
+}
+
+// The function below is an helper function for computer AI to choose a square according to difficulty settings
+function getWeightedRandom(difficulty) {
+    let chosenObj = {};
+    switch (difficulty) {
+        case 'easy':
+            chosenObj['worstMoves'] = 50;
+            chosenObj['intermediateMoves'] = 30;
+            chosenObj['bestMoves'] = 20;
+            break;
+        case 'normal':
+            chosenObj['worstMoves'] = 25;
+            chosenObj['intermediateMoves'] = 50;
+            chosenObj['bestMoves'] = 25;
+            break;
+        case 'hard':
+            chosenObj['worstMoves'] = 0;
+            chosenObj['intermediateMoves'] = 30;
+            chosenObj['bestMoves'] = 70;
+            break;
+        case 'veryHard':
+            chosenObj['worstMoves'] = 0;
+            chosenObj['intermediateMoves'] = 0;
+            chosenObj['bestMoves'] = 100;
+            break;
+    }
+    let arrayOfChoices = [];
+    for (let property in chosenObj) {
+        for (let i = 0; i < chosenObj[property]; i++) {
+            //console.log(property)
+            arrayOfChoices.push(property);
+        }
+    }
+    return arrayOfChoices[Math.floor(Math.random() * arrayOfChoices.length)];
+}
+
+
 /* ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- 
 */
 const endGameMessage = document.getElementById('endGameMessage');
@@ -332,7 +499,7 @@ playAgainButton.onclick = function () {
 function checkAfterValidMoves(move, player2) {
     let futureOtherPlayerMoves = player2['moves'];
     let player2MovesDiff;
-    //console.log(`List of moves already made: ${movesMade}`)
+
     const squareToRemove2 = move - 10;
     const squareToRemove3 = move - 1;
     const squareToRemove4 = move + 1;
@@ -361,8 +528,8 @@ function updateInfo() {
     //console.log(currentPlayer['name'] + ' player available moves are: ' + currentPlayer['moves']);
     //console.log(otherPlayer['name'] + ' player available moves are: ' + otherPlayer['moves']);
     console.log(`Current move: ${moveNumber}`);
-    console.log(`Current player is ${currentPlayer['name']}`);
-    console.log(`Other player is ${otherPlayer['name']}`);
+    //console.log(`Current player is ${currentPlayer['name']}`);
+    //console.log(`Other player is ${otherPlayer['name']}`);
     console.log('-----------------------------Move change-----------------------------');
 }
 
@@ -398,7 +565,7 @@ function errorMessage(assessmentValue) {
     errorMessageAlert.innerHTML = alert;
     errorAlertSound.play();
 }
-
+// The function below checks the available moves for each player while hovering the mouse over the squares of the board. If the square represents an available move, it will turn green. If not, it will turn red;
 function checkIfAvailable(event) {
 
     let highlightedSquare = Number(event.target['id'].substring(1, 3));
@@ -543,7 +710,7 @@ hardButton.onclick = function () {
 veryHardButton.onclick = function () {
     difficultyButtons.forEach(item => item.classList.remove('chosenOption'));
     veryHardButton.classList.add('chosenOption');
-    dog['difficulty'] = 'hard';
+    dog['difficulty'] = 'veryHard';
     console.log(dog['difficulty']);
 }
 
@@ -552,7 +719,3 @@ startButton.onclick = function () {
     boardContainer.style.display = 'flex';
     mainThemeSong.pause();
 }
-
-
-
-

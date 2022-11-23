@@ -6,7 +6,7 @@
 
 #startScreen {
     display: block;
-    height: 920px;
+    height: 960px;
 }
 
 #mainMenu {
@@ -43,7 +43,7 @@
 
 .middleScreen {
     width: 100%;
-    height: 920px;
+    height: 960px;
     text-align: center;
 }
 
@@ -236,7 +236,7 @@ h1 span {
 ---------------------------------------------------------*/
 
 #mainMenu {
-    height: 920px;
+    height: 960px;
 }
 
 /* TITLES STYLES */
@@ -422,7 +422,7 @@ td {
 ---------------------------------------------------------*/
 #boardContainer {
     width: 100%;
-    height: 920px;
+    height: 960px;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
