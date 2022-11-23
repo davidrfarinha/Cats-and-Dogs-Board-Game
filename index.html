@@ -4,22 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Cats & Dogs - The abstract board game</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Press+Start+2P&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="./Resources/Favicon/apple-touch-icon.png?">
-  <link rel="icon" type="image/png" sizes="32x32" href="./Resources/Favicon/favicon-32x32.png?">
-  <link rel="icon" type="image/png" sizes="16x16" href="./Resources/Favicon/favicon-16x16.png?">
+  <link rel="shortcut icon" href="#">
 </head>
 
 <body class="lightWood">
   <section id="startScreen">
     <div id="title1" class="title">
-      <svg class="titleSVG svgAnimation" id="cat-title" viewBox="0 0 300 300" xml:space="preserve"
+      <svg class="titleSVG svgAnimation" id="cat-title1" viewBox="0 0 300 300" xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 300 300">
         <path
           d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
@@ -61,8 +58,8 @@
   </section>
   <section id="mainMenu">
     <div id="title2" class="title">
-      <svg class="titleSVG" id="cat-title" viewBox="0 0 300 300" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-        enable-background="new 0 0 300 300">
+      <svg class="titleSVG" id="cat-title2" viewBox="0 0 300 300" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 300 300">
         <path
           d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
           fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8f4826" stroke-width="16" stroke-linecap="round"
@@ -125,37 +122,37 @@
   <section id="newGame" class="middleScreen">
     <div class="newGame centered wood messages">
       <h3>New Game</h3>
-      <h4>Game options</h2>
-        <table>
-          <tr>
-            <th id="gameMode" colspan="4">Game mode</th>
-          </tr>
-          <tr>
-            <td colspan="2"><button id="singlePlayerButton" class="newGameButton big ">Single player (Vs AI)</button>
-            </td>
-            <td colspan="2"><button id="multiPlayerButton" class="newGameButton big chosenOption">Multiplayer (hot
-                seat)</button>
-            </td>
-          </tr>
-        </table>
-        <table id="aiDiff">
-          <tr>
-            <th id="difficulty" colspan="4">AI Difficulty</th>
-          </tr>
-          <tr>
-            <td><button id="easy" class="newGameButton small">Easy</button></td>
-            <td><button id="normal" class="newGameButton small">Normal</button></td>
-            <td><button id="hard" class="newGameButton small">Hard</button></td>
-            <td><button id="veryHard" class="newGameButton small">Very hard</button></td>
-          </tr>
-        </table>
-        <button id="startButton">Start</button>
+      <h4>Game options</h4>
+      <table>
+        <tr>
+          <th id="gameMode" colspan="4">Game mode</th>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="singlePlayerButton" class="newGameButton big ">Single player (Vs AI)</button>
+          </td>
+          <td colspan="2"><button id="multiPlayerButton" class="newGameButton big chosenOption">Multiplayer (hot
+              seat)</button>
+          </td>
+        </tr>
+      </table>
+      <table id="aiDiff">
+        <tr>
+          <th id="difficulty" colspan="4">AI Difficulty</th>
+        </tr>
+        <tr>
+          <td><button id="easy" class="newGameButton small">Easy</button></td>
+          <td><button id="normal" class="newGameButton small">Normal</button></td>
+          <td><button id="hard" class="newGameButton small">Hard</button></td>
+          <td><button id="veryHard" class="newGameButton small">Very hard</button></td>
+        </tr>
+      </table>
+      <button id="startButton">Start</button>
     </div>
   </section>
 
   <section id="boardContainer">
     <div id="boardTitle" class="statsTitle">
-      <svg class="boardtitleSVG" id="cat-title" viewBox="0 0 300 300" xml:space="preserve"
+      <svg class="boardtitleSVG" id="cat-title3" viewBox="0 0 300 300" xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 300 300">
         <path
           d="M232 107.992V40.131a60.913 60.913 0 0 0-4-.131c-22.537 0-42.172 12.426-52.428 30.8M72 107.992V40.131A60.913 60.913 0 0 1 76 40c21.374 0 40.138 11.176 50.766 28.004"
@@ -361,7 +358,7 @@
       </div>
     </div>
   </section>
+  <script src="./script.js" async></script>
 </body>
-<script src="./script.js" async></script>
 
 </html>

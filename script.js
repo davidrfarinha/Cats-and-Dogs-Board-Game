@@ -89,17 +89,7 @@ function makeMove(event) {
         // This if statement checks if the game is multiplayer and if yes, it runs the function computerAI with the apropriate parameter for the difficulty level;
         if (currentPlayer['class'] === "computer" && moveNumber !== 0) {
             console.log('Now is the computer playing!');
-            switch (currentPlayer['difficulty']) {
-                case "easy":
-                    computerAI("easy");
-                    break;
-                case "normal":
-                    computerAI("normal");
-                    break;
-                case "hard":
-                    computerAI("hard");
-                    break;
-            }
+            computerAI(currentPlayer['difficulty'])
         }
     };
 }
@@ -284,7 +274,7 @@ function computerAI(difficulty) {
     } else {
         currentPlayer = cat;
         moveNumber++;
-        updateInfo();
+        updateInfo();veryhard
     }
 }
 */
