@@ -299,12 +299,6 @@ function computerAI(difficulty) {
     let moves2 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-2));
     let moves1 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (-1));
     let moves0 = possibleMoves.filter(item => item['otherPlayerLostMoves'] === (0));
-    //console.log(moves5);
-    //console.log(moves4);
-    //console.log(moves3);
-    //console.log(moves2);
-    //console.log(moves1);
-    //console.log(moves0);
 
     let bestMoves = [];
     let intermediateMoves = [];
@@ -534,7 +528,7 @@ function reset() {
     catAvailableMovesInfo.innerHTML = cat['moves'].length;
     dogAvailableMovesInfo.innerHTML = dog['moves'].length;
 }
-
+let messagesPopped = [];
 function errorMessage(assessmentValue) {
     let alert;
     switch (assessmentValue) {
@@ -551,9 +545,14 @@ function errorMessage(assessmentValue) {
             alert = "When placing a new pet on the board, players cannot place a cat next to a dog (horizontally or vertically) or a dog next to a cat.";
             break;
     }
-    errorMessageBox.style.display = 'block';
-    errorMessageAlert.innerHTML = alert;
-    errorAlertSound.play();
+    if (!messagesPopped.includes(assessmentValue)) {
+        errorMessageBox.style.display = 'block';
+        errorMessageAlert.innerHTML = alert;
+        errorAlertSound.play();
+    } else {
+        errorAlertSound.play();
+    }
+    messagesPopped.push(assessmentValue);
 }
 // The function below checks the available moves for each player while hovering the mouse over the squares of the board. If the square represents an available move, it will turn green. If not, it will turn red;
 function checkIfAvailable(event) {

@@ -53,22 +53,28 @@
 }
 
 .gameInfo {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
     padding: 20px;
     background-color: rgb(143, 72, 38);
     color: rgb(240, 228, 209);
     box-shadow: 8px 8px 16px 4px rgb(83, 42, 22);
     border-radius: 32px;
-    text-transform: capitalize;
-    line-height: 2.5;
+    line-height: 2;
+}
+.bold {
+    font-size: 1.8em;
+    font-weight: 900;
 }
 
 button {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Londrina Solid', cursive;
     background-color: rgb(143, 72, 38);
     color: rgb(240, 228, 209);
     border-radius: 64px;
-    font-size: 1.5em;
+    font-size: 2rem;
     margin-bottom: 1em;
     width: 20%;
     height: 64px;
@@ -90,7 +96,7 @@ button:active {
 }
 
 .font2 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Londrina Solid', cursive;
     color: rgb(143, 72, 38);
     ;
 }
@@ -226,8 +232,9 @@ h1 span {
 #startScreen h3 {
     text-align: center;
     position: relative;
-    top: 300px;
-    font-family: 'Press Start 2P', cursive;
+    top: 256px;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2.5em;
     color: rgb(143, 72, 38);
     ;
 }
@@ -267,9 +274,9 @@ h1 span {
 }
 
 h2 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Londrina Solid', cursive;
     text-align: center;
-    font-size: 2em;
+    font-size: 5em;
     color: rgb(143, 72, 38);
     margin-top: 60px;
 }
@@ -307,7 +314,7 @@ svg {
     align-items: center;
     justify-content: center;
     width: 80%;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Londrina Solid', cursive;
     background-color: rgb(143, 72, 38);
     color: rgb(240, 228, 209);
     box-shadow: 8px 8px 16px 4px rgb(83, 42, 22);
@@ -316,11 +323,11 @@ svg {
     left: 0;
     right: 0;
     margin: 32px auto;
-    padding: 48px;
+    /* padding: 48px; */
 }
 
 #newGame h4 {
-    font-size: 2.5em;
+    font-size: 4em;
 }
 
 
@@ -334,11 +341,11 @@ td {
 }
 
 .newGameButton {
-    padding: 16px;
-    font-family: 'Press Start 2P', cursive;
+    /* padding: 16px; */
+    font-family: 'Londrina Solid', cursive;
     margin: 1px auto;
     width: 256px;
-    font-size: 1em;
+    /* font-size: 1em; */
     background-color: rgb(143, 72, 38);
     color: rgb(240, 228, 209);
     border: 6px solid rgb(240, 228, 209);
@@ -407,6 +414,7 @@ td {
 
 .rules p {
     text-align: left;
+    text-transform: none;
 }
 
 #backButton {
@@ -544,12 +552,12 @@ td {
 }
 
 .messageContainer p {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Londrina Solid', cursive;
     text-align: center;
     margin: 0 20px 32px;
     color: rgb(143, 72, 38);
     line-height: 2;
-    font-size: 1.2em;
+    font-size: 2em;
 }
 
 #endGameMessage {
@@ -564,7 +572,7 @@ td {
     height: 96px;
     padding: 16px;
     margin: 16px;
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 #winnerContainer {

@@ -7,10 +7,14 @@
   <title>Cats & Dogs - The abstract board game</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Press+Start+2P&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Londrina+Solid:wght@300;400;900&display=swap"
     rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="./Resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Resources/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./Resources/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./Resources/favicon/site.webmanifest">
   <link rel="stylesheet" href="./style.css">
-  <link rel="shortcut icon" href="#">
 </head>
 
 <body class="lightWood">
@@ -271,13 +275,13 @@
 
     </div>
     <div class="gameInfo statsTitle wood">
-      <p>CURRENT MOVE: <span id="currentMove"></span></p>
+      <p>Current Move:<br><span id="currentMove" class="bold"></span></p>
       <hr>
-      <p>CURRENT PLAYER: <span id="currentPlayer"></span></p>
+      <p>Current Player:<br><span id="currentPlayer" class="bold"></span></p>
       <hr>
-      <p>CAT'S AVAILABLE SQUARES:<span id="catAvailableMoves"></span></p>
+      <p>Cat's available squares:<br><span id="catAvailableMoves" class="bold"></span></p>
       <hr>
-      <p>DOG'S AVAILABLE SQUARES:<span id="dogAvailableMoves"></span></p>
+      <p>Dog's available squares:<br><span id="dogAvailableMoves" class="bold"></span></p>
     </div>
     <div id="errorMessage" class="messageContainer lightWood message">
       <h1>Invalid move</h1>
