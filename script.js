@@ -134,8 +134,16 @@ const pieceSound = new Audio('./Resources/Sound/pieceMove.mp3');
 pieceSound.volume = 0.2;
 // This function adds a piece to the board corresponding to the board with the color of current player;
 function addPiece(playerColor, playerName, square) {
-    square.innerHTML = "<div class= 'piece " + playerName + "' style= 'background-color:" + playerColor + "; visibility: visible'></div>";
-    pieceSound.play();
+    if (currentPlayer['class'] === 'computer') {
+        square.innerHTML = "<div class= 'piece " + playerName + "' style= 'background-color:" + playerColor + "; visibility: visible; animation-delay: 500ms; animation-fill-mode: backwards; '; ></div>";
+        setTimeout(() => {
+            pieceSound.play();
+        }, 500);
+    } else {
+        square.innerHTML = "<div class= 'piece " + playerName + "' style= 'background-color:" + playerColor + "; visibility: visible; ease-out;'></div>";
+        pieceSound.play();
+    }
+    
 }
 
 // This function updates both players arrays of valid moves;
@@ -449,9 +457,6 @@ let winnerSVG;
 /* The function below is responsible for showing the endgame message*/
 function endGame(winner, loser) {
     updateInfo();
-    endGameMessage.style.display = 'block';
-    gameLoser.innerHTML = loser['name'];
-    gameWinner.innerHTML = winner['name'];
     let winnerSound;
     if (winner['name'] === 'dog') {
         winnerSVG = dogWinner;
@@ -460,8 +465,14 @@ function endGame(winner, loser) {
         winnerSVG = catWinner;
         winnerSound = catWinnerSound;
     }
+    setTimeout(() => {
+    endGameMessage.style.display = 'block';
+    gameLoser.innerHTML = loser['name'];
+    gameWinner.innerHTML = winner['name'];
     winnerSVG.style.display = 'block';
     winnerSound.play();
+    }, 1000);
+    
 }
 
 backToMainMenuButton.onclick = function () {
