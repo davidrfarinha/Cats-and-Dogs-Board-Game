@@ -1,13 +1,24 @@
-const allIds = ['A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'B21', 'B22', 'B23', 'B24', 'B25', 'B26', 'B27', 'B28', 'C31', 'C32', 'C33', 'C34', 'C35', 'C36', 'C37', 'C38', 'D41', 'D42', 'D43', 'D44', 'D45', 'D46', 'D47', 'D48', 'E51', 'E52', 'E53', 'E54', 'E55', 'E56', 'E57', 'E58', 'F61', 'F62', 'F63', 'F64', 'F65', 'F66', 'F67', 'F68', 'G71', 'G72', 'G73', 'G74', 'G75', 'G76', 'G77', 'G78', 'H81', 'H82', 'H83', 'H84', 'H85', 'H86', 'H87', 'H88'] // This array contains this ids pertaining all the squares in the board;
 
-//These two arrays contain the numbers of the squares referring to the valid first moves of each player;
+/* ---------------------- CATS AND DOGS ---------------------- */
+
+
+// Creating an array with the ids of all the available cells in the board 
+const allIds = [];
+for (let i = 1; i < 9; i++) {
+    for (let j = i * 10 + 1; j < i * 10 + 9; j++) {
+        allIds.push(`${String.fromCharCode(i + 64)}${j}`);
+    }
+}
+
+// Defining the numbers of the squares referring to the valid first moves of each player;
 const catFirstMove = [44, 45, 54, 55];
 const dogFirstMove = [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 46, 47, 48, 51, 52, 53, 56, 57, 58, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 74, 75, 76, 77, 78, 81, 82, 83, 84, 85, 86, 87, 88];
 
-//These two arrays contain the numbers of the squares referring to the valid initial moves of each player;
+//These two arrays contain the numbers of the squares referring to the valid initial moves of each player (these will change in the course of the game);
 const catInitialMoves = [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 74, 75, 76, 77, 78, 81, 82, 83, 84, 85, 86, 87, 88];
 const dogInitialMoves = [11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38, 41, 42, 43, 44, 45, 46, 47, 48, 51, 52, 53, 54, 55, 56, 57, 58, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 74, 75, 76, 77, 78, 81, 82, 83, 84, 85, 86, 87, 88];
 
+// Objects representing both players
 let cat = {
     name: 'cat',
     color: '#dcb893',
@@ -22,25 +33,24 @@ let dog = {
     difficulty: 'easy'
 }
 
-let squares = []; // This array will be populated with the object location of all the squares (found by their id) by the forEach loop below;
+// This array will be populated with the object location of all the squares (found by their id) by the forEach loop below;
+let squares = [];
 allIds.forEach(item => squares.push(document.getElementById(item)));
 
 let moveNumber = 0; // This is the move counter. For every turn, it will increase 1
 let currentPlayer = cat; // This variable tracks the current player
 let otherPlayer = dog; // This variable tracks the player who is waiting for his turn
 
-
-
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------
-// This is the program main function. It increases the turn counter (moveNumber) for every click in a square, decides who is the current player, evaluates the validity of the movement made, adds a piece to the board if the move is 
+//-------------------------------------------------------------------------------------------
+// This is the program main function. It increases the turn counter (moveNumber) for every click in a square, decides who is the current player, evaluates the validity of the movement made, adds a piece to the board if the move is valid
 function makeMove(event) {
-    moveNumber++; // This line of code increases the move counter for every move made;
+    moveNumber++; // Increasing the move counter for every move made;
     console.log(`Current move: ${moveNumber}`);
-
-    // The line of code above captures the event target id (the event target is the div that represents the clicked square), removes its first element (a letter) and turns it into a number, storing it in the variable playerMove. The purpose of this is to later evaluate the validity of the movement made, which will be easier with a numeric value;
+    console.log(event.target);
+    console.log(event.target['id']);
+    // Capturing the event target id (the event target is the div that represents the clicked square), removing its first element (a letter) and turning it into a number, storing it in the variable playerMove. The purpose of this is to later evaluate the validity of the movement made, which will be easier with a numeric value;
     let playerMove = Number(event.target['id'].substring(1, 3));
-
+    console.log(playerMove);
 
     // This if else if statement checks which player is currently playing;
     if (moveNumber % 2 === 1) {
@@ -53,18 +63,15 @@ function makeMove(event) {
 
     console.log(`Current player is ${currentPlayer['name']}`)
     console.log(`Other player is ${otherPlayer['name']}`)
-
     console.log(`${currentPlayer['name']} just made his move. He chose square ${playerMove}`);
 
     // This if else statement evaluates if the current move is valid according to the game rules with the help of function validMove. If valid, runs the functions addPiece and updateValidMoves;
     let assessmentOfMove = (validMove(playerMove, currentPlayer['moves']));
     console.log("assessmentOfMove:" + assessmentOfMove);
-
     if (assessmentOfMove > 0) {
         errorMessage(assessmentOfMove);
         moveNumber--;
     } else {
-
         addPiece(currentPlayer['color'], currentPlayer['name'], event.target);
         updateValidMoves(playerMove, currentPlayer, otherPlayer);
         updateInfo();
@@ -81,7 +88,7 @@ function makeMove(event) {
             otherPlayer = cat;
         }
 
-        // This if statement checks if the other player still has moves left. If not, it will run an alert informing the winner of the game and reset the whole board with the help of reset function;
+        // Checking if the other player still has moves left. If not, it will run an alert informing the winner of the game and reset the whole board with the help of reset function;
         if (currentPlayer['moves'].length === 0) {
             return endGame(otherPlayer, currentPlayer);
         }
@@ -93,8 +100,6 @@ function makeMove(event) {
         }
     };
 }
-
-
 
 // This function checks if the move being made is valid by comparing the player move with the array containing the list of valid moves;
 function validMove(playerMove, arrayOfMoves) {
@@ -130,12 +135,13 @@ function validMove(playerMove, arrayOfMoves) {
     return assessment;
 }
 
+// This function adds a piece to the board with the color of current player;
 const pieceSound = new Audio('./Resources/Sound/pieceMove.mp3');
 pieceSound.volume = 0.2;
-// This function adds a piece to the board corresponding to the board with the color of current player;
 function addPiece(playerColor, playerName, square) {
     if (currentPlayer['class'] === 'computer') {
         square.innerHTML = "<div class= 'piece " + playerName + "' style= 'background-color:" + playerColor + "; visibility: visible; animation-delay: 500ms; animation-fill-mode: backwards; '; ></div>";
+        // The delays applied here serve the purpose of making the computer move not look so sudden;
         setTimeout(() => {
             pieceSound.play();
         }, 500);
@@ -143,21 +149,22 @@ function addPiece(playerColor, playerName, square) {
         square.innerHTML = "<div class= 'piece " + playerName + "' style= 'background-color:" + playerColor + "; visibility: visible; ease-out;'></div>";
         pieceSound.play();
     }
-    
+
 }
 
 // This function updates both players arrays of valid moves;
 function updateValidMoves(move, player1, player2) {
+    const squareToRemove1 = move;
     const squareToRemove2 = move - 10;
     const squareToRemove3 = move - 1;
     const squareToRemove4 = move + 1;
     const squareToRemove5 = move + 10;
+    const allSquaresToRemove = [squareToRemove1, squareToRemove2, squareToRemove3, squareToRemove4, squareToRemove5];
     player1['moves'] = player1['moves'].filter(item => item !== move);
-    player2['moves'] = player2['moves'].filter(item => item !== move);
-    player2['moves'] = player2['moves'].filter(item => item !== squareToRemove2);
-    player2['moves'] = player2['moves'].filter(item => item !== squareToRemove3);
-    player2['moves'] = player2['moves'].filter(item => item !== squareToRemove4);
-    player2['moves'] = player2['moves'].filter(item => item !== squareToRemove5);
+
+    allSquaresToRemove.forEach(squareToRemove => {
+        player2['moves'] = player2['moves'].filter(item => item !== squareToRemove);
+    });
 }
 
 // ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
@@ -182,37 +189,31 @@ function computerAI(difficulty) {
 
     switch (true) {
         case moves5.length > 0:
-            //console.log('moves5.length > 0');
             bestMoves = moves5;
             intermediateMoves = moves4;
             worstMoves = moves3.concat(moves2, moves1, moves0);
             break;
         case moves4.length > 0:
-            //console.log('moves4.length > 0');
             bestMoves = moves4;
             intermediateMoves = moves3;
             worstMoves = moves2.concat(moves1, moves0);
             break;
         case moves3.length > 0:
-            //console.log('moves3.length > 0');
             bestMoves = moves3;
             intermediateMoves = moves2;
             worstMoves = moves1.concat(moves0);
             break;
         case moves2.length > 0:
-            //console.log('moves2.length > 0');
             bestMoves = moves2;
             intermediateMoves = moves1;
             worstMoves = moves0;
             break;
         case moves1.length > 0:
-            //console.log('moves1.length > 0');
             bestMoves = moves1;
             intermediateMoves = moves0;
             worstMoves = moves0;
             break;
         default:
-            //console.log('moves0.length > 0');
             bestMoves = moves0;
             intermediateMoves = moves0;
             worstMoves = moves0;
@@ -272,7 +273,8 @@ function computerAI(difficulty) {
     }
 }
 
-// The function below is an helper function for computer AI to choose a square according to difficulty settings
+// The function below is an helper function for computer AI to choose a move according to difficulty settings - An object called chosenObj is chosen according to difficulty. Then, a for loop nested in a forIn loop populates an array with x number of keys of the object, being that x is the value associated with that key. To finish, the function returns a random item from that array.
+//(I felt the need to comment this function very well, or I wouldn't understand it later)
 function getWeightedRandom(difficulty) {
     let chosenObj = {};
     switch (difficulty) {
@@ -300,7 +302,6 @@ function getWeightedRandom(difficulty) {
     let arrayOfChoices = [];
     for (let property in chosenObj) {
         for (let i = 0; i < chosenObj[property]; i++) {
-            //console.log(property)
             arrayOfChoices.push(property);
         }
     }
@@ -334,18 +335,18 @@ function endGame(winner, loser) {
         winnerSound = catWinnerSound;
     }
     setTimeout(() => {
-    endGameMessage.style.display = 'block';
-    gameLoser.innerHTML = loser['name'];
-    gameWinner.innerHTML = winner['name'];
-    winnerSVG.style.display = 'block';
-    winnerSound.play();
+        endGameMessage.style.display = 'block';
+        gameLoser.innerHTML = loser['name'];
+        gameWinner.innerHTML = winner['name'];
+        winnerSVG.style.display = 'block';
+        winnerSound.play();
     }, 1000);
-    
+
 }
 
 backToMainMenuButton.onclick = function () {
     reset();
-    mainMenuSection.style.display = 'block';
+    mainMenuSection.style.display = 'flex';
     endGameMessage.style.display = 'none';
     //newGameSection.style.display = 'block';
     boardContainer.style.display = 'none';
@@ -362,7 +363,6 @@ playAgainButton.onclick = function () {
 function checkAfterValidMoves(move, player2) {
     let futureOtherPlayerMoves = player2['moves'];
     let player2MovesDiff;
-
     const squareToRemove2 = move - 10;
     const squareToRemove3 = move - 1;
     const squareToRemove4 = move + 1;
@@ -433,38 +433,48 @@ function errorMessage(assessmentValue) {
     }
     messagesPopped.push(assessmentValue);
 }
-// The function below checks the available moves for each player while hovering the mouse over the squares of the board. If the square represents an available move, it will turn green. If not, it will turn red;
+// The function below checks the available moves for each player while hovering the mouse over the squares of the board. If the square represents an available move, it will turn green. If not, it will turn red (The first two if statements occur only in the first two moves);
 function checkIfAvailable(event) {
-
     let highlightedSquare = Number(event.target['id'].substring(1, 3));
     //console.log("highlightedsquare:" + highlightedSquare);
     if (moveNumber === 0) {
         if (catFirstMove.includes(highlightedSquare)) {
-            event.target.style.backgroundImage = 'linear-gradient(to right bottom, #5dcc95, #69d09c, #74d3a4, #7ed7ab, #89dab2, #93ddb8, #9ce0bf, #a6e3c5, #b1e6cc, #bcead3, #c6edda, #d1f0e1)';
+            paintSquare(event, 'red');
         } else {
-            event.target.style.backgroundImage = 'linear-gradient(to right bottom, #cc5d93, #d0689a, #d374a2, #d77ea9, #da89b0, #dd93b7, #e09cbd, #e3a6c4, #e6b1cb, #eabcd3, #edc6da, #f0d1e1)';
+            paintSquare(event, 'green');
         }
     } else if (moveNumber === 1) {
         if (dogFirstMove.includes(highlightedSquare) && dog['moves'].includes(highlightedSquare)) {
-            event.target.style.backgroundImage = 'linear-gradient(to right bottom, #5dcc95, #69d09c, #74d3a4, #7ed7ab, #89dab2, #93ddb8, #9ce0bf, #a6e3c5, #b1e6cc, #bcead3, #c6edda, #d1f0e1)';
+            paintSquare(event, 'red');
         } else {
-            event.target.style.backgroundImage = 'linear-gradient(to right bottom, #cc5d93, #d0689a, #d374a2, #d77ea9, #da89b0, #dd93b7, #e09cbd, #e3a6c4, #e6b1cb, #eabcd3, #edc6da, #f0d1e1)';
+            paintSquare(event, 'green');
         }
     } else if (moveNumber > 0) {
         if (currentPlayer['moves'].includes(highlightedSquare)) {
-            event.target.style.backgroundImage = 'linear-gradient(to right bottom, #5dcc95, #69d09c, #74d3a4, #7ed7ab, #89dab2, #93ddb8, #9ce0bf, #a6e3c5, #b1e6cc, #bcead3, #c6edda, #d1f0e1)';
+            paintSquare(event, 'red');
         } else {
-            event.target.style.backgroundImage = 'linear-gradient(to right bottom, #cc5d93, #d0689a, #d374a2, #d77ea9, #da89b0, #dd93b7, #e09cbd, #e3a6c4, #e6b1cb, #eabcd3, #edc6da, #f0d1e1)';
+            paintSquare(event, 'green');
         }
     }
 }
 
+// Helper function used by the function above to paint the squares with the corresponding color;
+function paintSquare(event, color) {
+    if (color === 'red') {
+        event.target.style.backgroundImage = 'linear-gradient(to right bottom, #5dcc95, #69d09c, #74d3a4, #7ed7ab, #89dab2, #93ddb8, #9ce0bf, #a6e3c5, #b1e6cc, #bcead3, #c6edda, #d1f0e1)';
+    } else if (color === 'green') {
+        event.target.style.backgroundImage = 'linear-gradient(to right bottom, #cc5d93, #d0689a, #d374a2, #d77ea9, #da89b0, #dd93b7, #e09cbd, #e3a6c4, #e6b1cb, #eabcd3, #edc6da, #f0d1e1)';
+    }
+}
+// Returning the squares to their original visual after hover out
 function revert(event) {
     event.target.style.backgroundImage = "";
 }
 
-// This forEach loop creates a onmouse down event listener that runs the function makeMove in every square of the board;
+// Creating a onmouse down event listener that runs the function makeMove in every square of the board;
 squares.forEach(item => item.onclick = makeMove);
+
+// Creating a onmouseover event listener to check if the square hovered is a valid move for the current player;
 squares.forEach(item => item.onmouseover = checkIfAvailable);
 squares.forEach(item => item.onmouseout = revert);
 
@@ -498,7 +508,7 @@ mainThemeSong.volume = 0.1;
 startScreen.onclick = function () {
     mainThemeSong.play();
     startScreen.style.display = 'none';
-    mainMenuSection.style.display = 'block';
+    mainMenuSection.style.display = 'flex';
 }
 
 /* MAIN MENU */
@@ -521,7 +531,7 @@ gameRulesButton.onclick = function () {
 
 backGameRulesButton.onclick = function () {
     gameRulesInfo.style.display = 'none';
-    mainMenuSection.style.display = 'block';
+    mainMenuSection.style.display = 'flex';
 
 }
 
@@ -541,7 +551,7 @@ const veryHardButton = document.getElementById('veryHard');
 const startButton = document.getElementById('startButton');
 const boardContainer = document.getElementById('boardContainer');
 
-multiPlayerButton.onclick = function () {
+multiPlayerButton.onclick = () => {
     aiDifficulty.style.display = 'none'
     singlePlayerButton.classList.remove('chosenOption');
     multiPlayerButton.classList.add('chosenOption');
@@ -549,7 +559,7 @@ multiPlayerButton.onclick = function () {
     console.log(dog['class']);
 }
 
-singlePlayerButton.onclick = function () {
+singlePlayerButton.onclick = () => {
     aiDifficulty.style.display = 'block'
     multiPlayerButton.classList.remove('chosenOption');
     singlePlayerButton.classList.add('chosenOption');
